@@ -1,56 +1,25 @@
 
 //  *** BASE COLORS ***
-// $blue: #007bff;
-// $indigo: #6610f2;
-// $purple: #6f42c1;
-// $pink: #e83e8c;
-// $red: #dc3545;
-// $orange: #fd7e14;
-// $yellow: #ffc107;
-// $green: #28a745;
-// $teal: #20c997;
-// $cyan: #17a2b8;
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #f79745;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
 
 //  *** THEME COLORS ***
-// $primary: $blue;
-// $secondary: $gray-600;
-// $success: $green;
-// $info: $cyan;
-// $warning: $yellow;
-// $danger: $red;
-// $light: $gray-100;
-// $dark: $gray-800;
-
-//  *** GLOBAL OPTIONS ***
-// $enable-caret: true;
-// $enable-rounded: true;
-// $enable-shadows: false;
-// $enable-gradients: false;
-// $enable-transitions: true;
-// $enable-grid-classes: true;
-// $enable-print-styles: true;
-
-//  *** DEFAULT STYLES ***
-// $body-bg: $white;
-// $body-color: $gray-900;
-// $link-color: theme-color("primary");
-// $link-decoration: none;
-// $link-hover-color: darken($link-color, 15%);
-// $link-hover-decoration: underline;
-// $border-radius: .25rem;
-// $border-radius-lg: .3rem;
-// $border-radius-sm: .2rem;
-
-//  *** HEADLINES ***
-$h1-font-size: $font-size-base * 1.8;
-$h2-font-size: $font-size-base * 1.6;
-$h3-font-size: $font-size-base * 1.4;
-$h4-font-size: $font-size-base * 1.20;
-$h5-font-size: $font-size-base * 1.1;
-$h6-font-size: $font-size-base;
-
-//  *** LINE HEIGHTS ***
-$line-height-base: 1.6;
+$primary: #acc0c4;
+$secondary: $orange;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
 
 //  *** THEME COLORS ***
 $theme-colors: map-merge($theme-colors, (
@@ -67,9 +36,40 @@ $theme-colors: map-merge($theme-colors, (
     "white":      $white,
     "gray":       $gray-600,
     "gray-dark":  $gray-800,
-    "edit":       $blue,
+    "edit":       $cyan,
     "create":     $green
 ));
+
+//  *** GLOBAL OPTIONS ***
+// $enable-caret: true;
+$enable-rounded: false;
+// $enable-shadows: false;
+// $enable-gradients: false;
+// $enable-transitions: true;
+// $enable-grid-classes: true;
+// $enable-print-styles: true;
+
+//  *** DEFAULT STYLES ***
+$body-bg: #1e222a;
+$body-color: #eee;
+$link-color: theme-color("white");
+$link-decoration: none;
+$link-hover-color: theme-color("orange");
+$link-hover-decoration: none;
+$border-radius: 50%;
+// $border-radius-lg: .3rem;
+// $border-radius-sm: .2rem;
+
+//  *** HEADLINES ***
+$h1-font-size: $font-size-base * 1.8;
+$h2-font-size: $font-size-base * 1.6;
+$h3-font-size: $font-size-base * 1.4;
+$h4-font-size: $font-size-base * 1.20;
+$h5-font-size: $font-size-base * 1.1;
+$h6-font-size: $font-size-base;
+
+//  *** LINE HEIGHTS ***
+$line-height-base: 1.6;
 
 //  *** RESPONSIVE BREAK POINTS ***
 $grid-breakpoints: (
@@ -89,4 +89,34 @@ $container-max-widths: (
     lg: 960px,
     xl: 1140px,
     xxl: 1340px
+);
+
+// *** Spacer ***
+$spacer: 16px;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+	//Add For This Theme
+	half: ($spacer - 11),
+	15: ($spacer - 1),
+	20: ($spacer + 4),
+	25: ($spacer + 9),
+	30: ($spacer + 14),
+	35: ($spacer + 19),
+	40: ($spacer + 24),
+	45: ($spacer + 29),
+	50: ($spacer + 34),
+	60: ($spacer + 44),
+	70: ($spacer + 54),
+	80: ($spacer + 64),
+	90: ($spacer + 74),
+	100: ($spacer + 84)
+  ),
+  $spacers
 );
