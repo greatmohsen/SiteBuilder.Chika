@@ -1,0 +1,92 @@
+
+//  *** BASE COLORS ***
+// $blue: #007bff;
+// $indigo: #6610f2;
+// $purple: #6f42c1;
+// $pink: #e83e8c;
+// $red: #dc3545;
+// $orange: #fd7e14;
+// $yellow: #ffc107;
+// $green: #28a745;
+// $teal: #20c997;
+// $cyan: #17a2b8;
+
+//  *** THEME COLORS ***
+// $primary: $blue;
+// $secondary: $gray-600;
+// $success: $green;
+// $info: $cyan;
+// $warning: $yellow;
+// $danger: $red;
+// $light: $gray-100;
+// $dark: $gray-800;
+
+//  *** GLOBAL OPTIONS ***
+// $enable-caret: true;
+// $enable-rounded: true;
+// $enable-shadows: false;
+// $enable-gradients: false;
+// $enable-transitions: true;
+// $enable-grid-classes: true;
+// $enable-print-styles: true;
+
+//  *** DEFAULT STYLES ***
+// $body-bg: $white;
+// $body-color: $gray-900;
+// $link-color: theme-color("primary");
+// $link-decoration: none;
+// $link-hover-color: darken($link-color, 15%);
+// $link-hover-decoration: underline;
+// $border-radius: .25rem;
+// $border-radius-lg: .3rem;
+// $border-radius-sm: .2rem;
+
+//  *** HEADLINES ***
+$h1-font-size: $font-size-base * 1.8;
+$h2-font-size: $font-size-base * 1.6;
+$h3-font-size: $font-size-base * 1.4;
+$h4-font-size: $font-size-base * 1.20;
+$h5-font-size: $font-size-base * 1.1;
+$h6-font-size: $font-size-base;
+
+//  *** LINE HEIGHTS ***
+$line-height-base: 1.6;
+
+//  *** THEME COLORS ***
+$theme-colors: map-merge($theme-colors, (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800,
+    "edit":       $blue,
+    "create":     $green
+));
+
+//  *** RESPONSIVE BREAK POINTS ***
+$grid-breakpoints: (
+    xxs: 0px,
+    xs: 375px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+//  *** CONTAINER WIDTHS ***
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1340px
+);

@@ -1,0 +1,32 @@
+<include name="layouts/header.html" />
+
+<div class="container">
+	<form class="quicksearch" action="/site/search" dynamic-search auto-show>
+		<div class="form-group">
+			<div class="input-group quicksearch-query">
+				<input type="text" name="q" class="form-control quicksearch-query-input" maxlength="100" ng-model="query" ng-model-options="{debounce:500}" placeholder="جستجو کنید...">
+				<div class="input-group-append">
+					<button class="btn btn-primary quicksearch-query-button">
+						<i class="fa fa-fw fa-search"></i>
+					</button>
+				</div>
+			</div>
+			<div class="quicksearch-items d-none" ng-class="{'d-none': !items.length}">
+				<div class="quicksearch-item" ng-repeat="item in items">
+					<div class="quicksearch-item-image" ng-show="item.image">
+						<a ng-href="{{item.url}}" class="quicksearch-item-image-link">
+							<img ng-src="{{item.image}}?m=crop&w=100&h=100&q=high" class="quicksearch-item-image-element">
+						</a>
+					</div>
+					<h4 class="quicksearch-item-title">
+						<a ng-href="{{item.url}}" class="quicksearch-item-link">
+							<span ng-bind="item.title"></span>
+						</a>
+					</h4>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<include name="layouts/footer.html" />
