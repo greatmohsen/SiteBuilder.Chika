@@ -19,13 +19,98 @@
 	<body ng-class="{'no-scroll':no_scroll}" itemscope itemtype="http://schema.org/WebPage">
 
 		<!--navigation-->
-		<if terms="@@ismobiledevice">
-			<include name="layouts/navigations/offcanvas.html" />
-		</if>
-		<if terms="@@ismobiledevice.false()">
-			<include name="layouts/navigations/navbar.html" />
-		</if>
+		<div class="container">
+			<div class="row">
+				<if terms="@@ismobiledevice">
+					<div class="col-4">
+						<include name="layouts/navigations/offcanvas.html" />
+					</div>
+				</if>
+				<if terms="@@ismobiledevice.false()">
+					<div class="col-md-9">
+						<include name="layouts/navigations/navbar.html" />
+					</div>
+				</if>
+				<widget type="content" name="social">
+					<div class="col-8 col-md-3">
+						<div class="social-links pt-20 text-left">
+							<if terms="@@telegram.exists()">
+								<a class="social-links-item telegram" href="@@telegram"><span class="fa fa-send"></span></a>
+							</if>
+							<if terms="@@instagram.exists()">
+								<a class="social-links-item instagram" href="@@instagram"><span class="fa fa-instagram"></span></a>
+							</if>
+							<if terms="@@linkedin.exists()">
+								<a class="social-links-item linkedin" href="@@linkedin"><span class="fa fa-linkedin"></span></a>
+							</if>
+							<if terms="@@twitter.exists()">
+								<a class="social-links-item twitter" href="@@twitter"><span class="fa fa-twitter"></span></a>
+							</if>
+							<if terms="@@facebook.exists()">
+								<a class="social-links-item facebook" href="@@facebook"><span class="fa fa-facebook"></span></a>
+							</if>
+							<if terms="@@skype.exists()">
+								<a class="social-links-item skype" href="@@skype"><span class="fa fa-skype"></span></a>
+							</if>
+							<if terms="@@user.admin">
+								<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+									<i class="fa fa-pencil"></i>
+									ویرایش
+								</a>
+							</if>
+						</div>
+					</div>
+				</widget>
+			</div>
+		</div>
 		<!--/navigation-->
+
+		<!--hedaer-->
+		<div class="container">
+			<div class="header py-50">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="header-logo d-flex flex-row align-items-center">
+							<img src="@@config.logo" alt="@@config.title" class="header-logo-image ml-20">
+							<h2 class="header-logo-title m-0">
+								<a class="header-logo-title-link" href="/">@@config.title</a>
+							</h2>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="header-search">
+							<form class="quicksearch" action="/site/search" dynamic-search auto-show>
+								<div class="form-group">
+									<div class="input-group quicksearch-query">
+										<input type="text" name="q" class="form-control quicksearch-query-input" maxlength="100" ng-model="query" ng-model-options="{debounce:500}" placeholder="جستجو کنید...">
+										<div class="input-group-append">
+											<button class="btn btn-orange quicksearch-query-button">
+												<i class="fa fa-fw fa-search"></i>
+											</button>
+										</div>
+									</div>
+									<div class="quicksearch-items d-none" ng-class="{'d-none': !items.length}">
+										<div class="quicksearch-item" ng-repeat="item in items">
+											<div class="quicksearch-item-image" ng-show="item.image">
+												<a ng-href="{{item.url}}" class="quicksearch-item-image-link">
+													<img ng-src="{{item.image}}?m=crop&w=100&h=100&q=high" class="quicksearch-item-image-element">
+												</a>
+											</div>
+											<h4 class="quicksearch-item-title">
+												<a ng-href="{{item.url}}" class="quicksearch-item-link">
+													<span ng-bind="item.title"></span>
+												</a>
+											</h4>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/hedaer-->
 
 		<if terms="@@user.admin">
 			<div class="modal fade" tabindex="-1" role="dialog" edit-dialog>
