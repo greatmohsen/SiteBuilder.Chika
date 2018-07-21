@@ -2007,7 +2007,7 @@ hr { border-width: 2px; border-color: whitesmoke; }
 .cart-payment-inline-error {  }
 
 /* footer elements */
-.footer-container { background: #f5f5f5; padding: 20px 0 60px 0; margin: 70px 0 0; }
+.footer-container { padding: 100px 0; margin: 70px 0 0; }
 .footer-container .row > div { margin: 50px 0 0; }
 .footer-posts {  }
 .footer-posts-title { margin-top: 0; }
@@ -2015,9 +2015,9 @@ hr { border-width: 2px; border-color: whitesmoke; }
 .footer-posts-item {  }
 .footer-posts-empty {  }
 .footer-posts-edit { margin: 10px 0; }
-.footer-subscription {  }
+.footer-subscription { text-align: center; padding: 40px 70px; background: url(../images/newsletter-bg.jpg) no-repeat center center; background-size: cover; }
 .footer-subscription-form {  }
-.footer-subscription-title { margin-top: 0; }
+.footer-subscription-title { margin-top: 0; margin-bottom: 30px; }
 .footer-subscription-failed { margin-top: 20px; }
 .footer-subscription-succeed { margin-top: 20px; }
 .footer-subscription-inline-error {  }
@@ -2025,7 +2025,7 @@ hr { border-width: 2px; border-color: whitesmoke; }
 .footer-subscription-email {  }
 .footer-subscription-mobile {  }
 .footer-subscription-loading { margin: 20px 0 0; }
-.footer-subscription-submit {  }
+.footer-subscription-submit { padding: 10px 30px; height: 50px; color: #fff; width: 100%; }
 .footer-subscription-edit { margin: 10px 0; }
 .footer-contact {  }
 .footer-contact-title { margin-top: 0; }
@@ -2052,7 +2052,15 @@ hr { border-width: 2px; border-color: whitesmoke; }
 .quicksearch {  }
 .quicksearch-query {  }
 .quicksearch-query-input { background: rgba(255, 255, 255, 0.1); border-radius: 50px; padding: 10px 20px; border: none; color: #acc0c4; height: 50px; }
-.quicksearch-query-button { border-radius: 50%; color: #fff; border: none; width: 50px; height: 50px; text-align: center; font-size: 20px; margin-right: 15px; padding: 0; }
+.quicksearch-query-button { border-radius: 50%; color: #fff; border: none; width: 50px; height: 50px; text-align: center; font-size: 20px; padding: 0; }
 .quicksearch-query-button .fa { line-height: 48px; }
+
+/*** Footer ***/
+.footer-menu {  }
+.footer-menu-title { color: #75959b; margin: 0 0 20px; }
+.footer-menu-items { list-style: none; padding: 0; margin: 0; }
+.footer-menu-item { padding: 5px 0; }
+.footer-menu-link { font-size: 17px; color: #999; }
+.footer-menu-link:hover { color: #f79745; }
 
 /*** Home ***/

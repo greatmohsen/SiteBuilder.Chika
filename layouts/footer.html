@@ -2,37 +2,56 @@
 		<footer class="footer-container">
 			<div class="container">
 				<div class="row">
-					<widget type="posts" name="footer:posts" section="پاورقی">
-						<div class="col-md-6">
-							<div class="footer-posts">
-								<h3 class="footer-posts-title">
+					<widget type="menu" name="footer:menu-1" section="پاورقی">
+						<div class="col-md-3">
+							<div class="footer-menu">
+								<h3 class="footer-menu-title">
 									@@title
 								</h3>
-								<if terms="@@items.any()">
-									<ul class="footer-posts-list">
-										<loop src="@@items">
-											<li class="footer-posts-item">
-												<a href="@@url">@@title</a>
-											</li>
-										</loop>
-									</ul>
-								</if>
-								<if terms="@@items.empty()">
-									<div class="footer-posts-empty">
-										موردی برای نمایش وجود ندارد.
+								<ul class="footer-menu-items">
+									<loop src="@@items">
+										<li class="footer-menu-item">
+											<a href="@@url" class="footer-menu-link @@cssclass" target="@@target">@@title</a>
+										</li>
+									</loop>
+								</ul>
+								<if terms="@@user.admin">
+									<div class="mt-1">
+										<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+											<i class="fa fa-pencil"></i>
+											ویرایش لینک‌ها
+										</a>
 									</div>
 								</if>
+							</div>
+						</div>
+					</widget>
+					<widget type="menu" name="footer:menu-2" section="پاورقی">
+						<div class="col-md-3">
+							<div class="footer-menu">
+								<h3 class="footer-menu-title">
+									@@title
+								</h3>
+								<ul class="footer-menu-items">
+									<loop src="@@items">
+										<li class="footer-menu-item">
+											<a href="@@url" class="footer-menu-link @@cssclass" target="@@target">@@title</a>
+										</li>
+									</loop>
+								</ul>
 								<if terms="@@user.admin">
-									<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget footer-posts-edit">
-										<i class="fa fa-pencil"></i>
-										ویرایش
-									</a>
+									<div class="mt-1">
+										<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+											<i class="fa fa-pencil"></i>
+											ویرایش لینک‌ها
+										</a>
+									</div>
 								</if>
 							</div>
 						</div>
 					</widget>
 					<widget type="subscription" name="footer:subscription" section="پاورقی">
-						<div class="col-md-6 col-lg-3">
+						<div class="col-md-6">
 							<div class="footer-subscription">
 								<form name="footersubscription" class="footer-subscription-form" ng-submit="footersubscription.$valid && submit()" eval="collect('@@label')" subscription dynamic-form auto-show novalidate>
 									<h3 class="footer-subscription-title">
@@ -71,38 +90,22 @@
 											</span>
 										</div>
 									</div>
-									<button class="btn btn-sm btn-success footer-subscription-submit" ng-disabled="progress">
+									<button class="btn btn-lg btn-orange rounded footer-subscription-submit" ng-disabled="progress">
 										ثبت‌نام
 									</button>
 									<if terms="@@user.admin">
-										<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget footer-subscription-edit">
-											<i class="fa fa-pencil"></i>
-											ویرایش
-										</a>
+										<div class="mt-3">
+											<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget footer-subscription-edit">
+												<i class="fa fa-pencil"></i>
+												ویرایش
+											</a>
+										</div>
 									</if>
 									<div class="footer-subscription-loading" ng-show="progress">
 										<i class="fa fa-refresh fa-spin fa-fw"></i>
 										کمی صبر کنید...
 									</div>
 								</form>
-							</div>
-						</div>
-					</widget>
-					<widget type="content" name="footer:contact" section="پاورقی">
-						<div class="col-md-6 col-lg-3">
-							<div class="footer-contact">
-								<h3 class="footer-contact-title">
-									@@title
-								</h3>
-								<div class="footer-contact-description">
-									@@description
-								</div>
-								<if terms="@@user.admin">
-									<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget footer-contact-edit">
-										<i class="fa fa-pencil"></i>
-										ویرایش
-									</a>
-								</if>
 							</div>
 						</div>
 					</widget>
@@ -114,9 +117,43 @@
 		<!--copyright-->
 		<div class="copyright-container">
 			<div class="container">
-				<span class="copyright-text">
-					@@config.copyright
-				</span>
+				<div class="row">
+					<div class="col-md-6">
+						<span class="copyright-text">
+							@@config.copyright
+						</span>
+					</div>
+					<widget type="content" name="social">
+						<div class="col-md-6">
+							<div class="social-links text-left">
+								<if terms="@@telegram.exists()">
+									<a class="social-links-item telegram" href="@@telegram"><span class="fa fa-send"></span></a>
+								</if>
+								<if terms="@@instagram.exists()">
+									<a class="social-links-item instagram" href="@@instagram"><span class="fa fa-instagram"></span></a>
+								</if>
+								<if terms="@@linkedin.exists()">
+									<a class="social-links-item linkedin" href="@@linkedin"><span class="fa fa-linkedin"></span></a>
+								</if>
+								<if terms="@@twitter.exists()">
+									<a class="social-links-item twitter" href="@@twitter"><span class="fa fa-twitter"></span></a>
+								</if>
+								<if terms="@@facebook.exists()">
+									<a class="social-links-item facebook" href="@@facebook"><span class="fa fa-facebook"></span></a>
+								</if>
+								<if terms="@@skype.exists()">
+									<a class="social-links-item skype" href="@@skype"><span class="fa fa-skype"></span></a>
+								</if>
+								<if terms="@@user.admin">
+									<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+										<i class="fa fa-pencil"></i>
+										ویرایش
+									</a>
+								</if>
+							</div>
+						</div>
+					</widget>
+				</div>
 			</div>
 		</div>
 		<!--/copyright-->
