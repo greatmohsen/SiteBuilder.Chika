@@ -39,6 +39,21 @@ $theme-colors: map-merge($theme-colors, (
     "create":     $green
 ));
 
+// Color contrast
+@mixin color-yiq($color) {
+	$r: red($color);
+	$g: green($color);
+	$b: blue($color);
+
+	$yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+	@if ($yiq >= 200) {
+		color: #444;
+	} @else {
+		color: #fff;
+	}
+}
+
 //  *** GLOBAL OPTIONS ***
 // $enable-caret: true;
 $enable-rounded: true;
@@ -55,7 +70,7 @@ $link-color: theme-color("white");
 $link-decoration: none;
 $link-hover-color: theme-color("orange");
 $link-hover-decoration: none;
-$border-radius: 50px;
+$border-radius: 5px;
 // $border-radius-lg: .3rem;
 // $border-radius-sm: .2rem;
 
@@ -103,6 +118,7 @@ $spacers: map-merge(
     5: ($spacer * 3),
 	//Add For This Theme
 	half: ($spacer - 11),
+	10: ($spacer - 6),
 	15: ($spacer - 1),
 	20: ($spacer + 4),
 	25: ($spacer + 9),
@@ -131,3 +147,6 @@ $input-border-radius: 50px;
 $input-btn-padding-y: 10px;
 $input-btn-padding-x: 30px;
 $input-btn-line-height: 48px;
+//button
+$btn-border-radius: 50px;
+$btn-padding-x: 30px;

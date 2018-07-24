@@ -1,32 +1,265 @@
 <include name="layouts/header.html" />
 
-<div class="container">
-	<form class="quicksearch" action="/site/search" dynamic-search auto-show>
-		<div class="form-group">
-			<div class="input-group quicksearch-query">
-				<input type="text" name="q" class="form-control quicksearch-query-input" maxlength="100" ng-model="query" ng-model-options="{debounce:500}" placeholder="جستجو کنید...">
-				<div class="input-group-append">
-					<button class="btn btn-primary quicksearch-query-button">
-						<i class="fa fa-fw fa-search"></i>
-					</button>
+	<div class="container">
+		<!--slider-->
+		<widget type="contentlist" name="home:slider" section="صفحه‌ی نخست">
+			<div class="slider-container my-50">
+				<div class="owl-container position-relative">
+					<a href="" class="slider-nav slider-next owl-next"><i class="fa fa-angle-right"></i></a>
+					<a href="" class="slider-nav slider-prev owl-prev"><i class="fa fa-angle-left"></i></a>
+					<div class="slider-items owl-carousel" options="{ autoplay: true, autoplayTimeout: 4500, autoplayHoverPause: true, smartSpeed: 500, loop:true, dots: false, rtl: true, responsive:{ 0:{ items: 1 } } }">
+						<loop src="@@items">
+							<div class="slider-item">
+								<img class="slider-item-image" src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=500&width=1310&q=high' alt="@@title">
+								<div class="slider-item-text">
+									<h2 class="slider-item-title">
+										<a class="slider-item-link" href="@@url">
+											@@title
+										</a>
+									</h2>
+									<p class="slider-item-description">
+										@@description
+									</p>
+									<if terms="@@user.admin">
+										<div class="pt-15">
+											<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+												<i class="fa fa-pencil"></i>
+												ویرایش
+											</a>
+										</div>
+									</if>
+								</div>
+							</div>
+						</loop>
+					</div>
 				</div>
-			</div>
-			<div class="quicksearch-items d-none" ng-class="{'d-none': !items.length}">
-				<div class="quicksearch-item" ng-repeat="item in items">
-					<div class="quicksearch-item-image" ng-show="item.image">
-						<a ng-href="{{item.url}}" class="quicksearch-item-image-link">
-							<img ng-src="{{item.image}}?m=crop&w=100&h=100&q=high" class="quicksearch-item-image-element">
+				<if terms="@@user.admin">
+					<div class="text-center pt-15">
+						<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+							<i class="fa fa-pencil"></i>
+							ویرایش تنظیمات
 						</a>
 					</div>
-					<h4 class="quicksearch-item-title">
-						<a ng-href="{{item.url}}" class="quicksearch-item-link">
-							<span ng-bind="item.title"></span>
+				</if>
+			</div>
+		</widget>
+		<!--/slider-->
+
+		<!--pictures-->
+		<widget type="gallery" name="home:pictures" section="صفحه‌ی نخست">
+			<div class="pictures-container my-50">
+				<h2 class="section-title">
+					@@title
+				</h2>
+				<div class="row">
+					<loop src="@@items">
+						<div class="col-md-4">
+							<div class="pictures-item position-relative mb-30">
+								<div class="pictures-item-overlay">
+									<span class="fa fa-camera-retro pictures-item-icon mb-30"></span>
+									<h3 class="pictures-item-title mb-15">
+										@@title
+									</h3>
+									<p class="pictures-item-description mb-20">
+										@@description
+									</p>
+									<a href="@@url" class="btn btn-orange rounded-0 pictures-item-link">
+										@@anchor
+										<i class="fa fa-angle-left"></i>
+									</a>
+								</div>
+								<img class="pictures-item-image" src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=400&width=400&q=high' alt="@@title">
+							</div>
+						</div>
+					</loop>
+				</div>
+				<if terms="@@user.admin">
+					<div class="text-center">
+						<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+							<i class="fa fa-pencil"></i>
+							ویرایش
 						</a>
-					</h4>
+					</div>
+				</if>
+			</div>
+		</widget>
+		<!--/pictures-->
+
+		<!--features-->
+		<widget type="contentlist" name="home:features" section="صفحه‌ی نخست">
+			<div class="features-container my-50 py-50">
+				<h2 class="section-title">
+					@@title
+				</h2>
+				<div class="row">
+					<loop src="@@items">
+						<div class="col-md-3">
+							<div class="features-item text-center mb-30">
+								<img src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=100&width=100&q=high' alt="@@title" class="features-item-image">
+								<if terms="@@user.admin">
+									<div class="py-15">
+										<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+											<i class="fa fa-pencil"></i>
+											ویرایش
+										</a>
+									</div>
+								</if>
+								<h3 class="features-item-title my-20">
+									<a href="@@url" class="features-item-link">
+										@@title
+									</a>
+								</h3>
+								<p class="features-item-description">
+									@@description
+								</p>
+							</div>
+						</div>
+					</loop>
+				</div>
+				<if terms="@@user.admin">
+					<div class="text-center">
+						<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+							<i class="fa fa-pencil"></i>
+							ویرایش تنظیمات
+						</a>
+					</div>
+				</if>
+			</div>
+		</widget>
+		<!--/features-->
+
+		<!--logos-->
+		<widget type="gallery" name="home:logos" section="صفحه‌ی نخست">
+			<div class="logos-container p-50">
+				<div class="owl-container position-relative">
+					<div class="logos-items owl-carousel" options="{ autoplay: true, autoplayTimeout: 3500, margin: 30, autoplayHoverPause: true, smartSpeed: 500, loop:true, rtl: true, responsive:{ 0:{ items: 4 } } }">
+						<loop src="@@items">
+							<div class="logos-item d-flex justify-content-center align-items-center bg-white rounded">
+								<a href="@@url" class="logos-item-link">
+									<img src='@@image.default("/site/resources/images/empty.jpg")' alt="@@title" class="logos-item-image">
+								</a>
+							</div>
+						</loop>
+					</div>
+				</div>
+				<if terms="@@user.admin">
+					<div class="pt-15">
+						<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+							<i class="fa fa-pencil"></i>
+							ویرایش
+						</a>
+					</div>
+				</if>
+			</div>
+		</widget>
+		<!--/logos-->
+
+		<!--products-->
+		<widget type="products" name="home:products" section="صفحه‌ی نخست">
+			<div class="products-container my-50">
+				<h2 class="section-title">
+					@@title
+				</h2>
+				<div class="row">
+					<loop src="@@items">
+						<div class="col-md-3">
+							<div class="products-item text-center mb-30">
+								<a href="@@url" class="products-item-link">
+									<img src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=250&width=250&q=high' alt="@@title" class="products-item-image">
+								</a>
+								<h3 class="products-item-title px-15 mt-20">
+									<a href="@@url" class="products-item-link">
+										@@title
+									</a>
+								</h3>
+								<span class="products-item-price d-block px-15 pb-20">
+									@@price تومان
+								</span>
+							</div>
+						</div>
+					</loop>
+				</div>
+				<if terms="@@user.admin">
+					<div class="pt-15">
+						<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+							<i class="fa fa-pencil"></i>
+							ویرایش
+						</a>
+					</div>
+				</if>
+			</div>
+		</widget>
+		<!--/products-->
+
+		<!--contact-->
+		<widget type="content" name="home:contact" section="صفحه‌ی نخست">
+			<div class="contcat-container p-50">
+				<h2 class="contact-title mb-30">
+					@@title
+					<if terms="@@user.admin">
+						<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget mr-20">
+							<i class="fa fa-pencil"></i>
+							ویرایش
+						</a>
+					</if>
+				</h2>
+				<div class="row">
+					<div class="col-md-9">
+						<p class="contact-description">
+							@@description
+						</p>
+					</div>
+					<div class="col-md-3">
+						<div class="text-left">
+							<a href="@@url" class="btn btn-orange contact-link">
+								@@anchor
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</form>
-</div>
+		</widget>
+		<!--/contact-->
+
+		<!--posts-->
+		<widget type="posts" name="home:posts" section="صفحه نخست">
+			<div class="posts-container my-50">
+				<h2 class="section-title">
+					@@title
+				</h2>
+				<div class="row">
+					<loop src="@@items">
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="posts-item position-relative mb-30">
+								<a href="@@url">
+									<img class="posts-item-image" src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=250&width=250&q=high' alt="@@title">
+								</a>
+								<h3 class="posts-item-title mt-25 mb-15">
+									<a class="posts-item-link" href="@@url">
+										@@title
+									</a>
+								</h3>
+								<div class="posts-item-date">
+									<i class="posts-item-date-icon ml-10 fa fa-calendar"></i>
+									@@date
+								</div>
+								<a href="@@url" class="posts-item-more">
+									<i class="fa fa-angle-left"></i>
+								</a>
+							</div>
+						</div>
+					</loop>
+				</div>
+				<if terms="@@user.admin">
+					<div class="pt-15">
+						<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+							<i class="fa fa-pencil"></i>
+							ویرایش
+						</a>
+					</div>
+				</if>
+			</div>
+		</widget>
+	</div>
 
 <include name="layouts/footer.html" />
