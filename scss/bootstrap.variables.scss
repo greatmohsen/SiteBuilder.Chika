@@ -75,11 +75,11 @@ $border-radius: 5px;
 // $border-radius-sm: .2rem;
 
 //  *** HEADLINES ***
-$h1-font-size: $font-size-base * 1.8;
-$h2-font-size: $font-size-base * 1.6;
-$h3-font-size: $font-size-base * 1.4;
-$h4-font-size: $font-size-base * 1.20;
-$h5-font-size: $font-size-base * 1.1;
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.8;
+$h3-font-size: $font-size-base * 1.6;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.3;
 $h6-font-size: $font-size-base;
 
 //  *** LINE HEIGHTS ***
@@ -149,4 +149,8 @@ $input-btn-padding-x: 30px;
 $input-btn-line-height: 48px;
 //button
 $btn-border-radius: 50px;
+$btn-border-radius-sm: 30px;
+$btn-border-radius-lg: 80px;
 $btn-padding-x: 30px;
+$btn-padding-x-sm: 20px;
+$btn-padding-x-lg: 40px;

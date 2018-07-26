@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="row">
 					<widget type="menu" name="footer:menu-1" section="پاورقی">
-						<div class="col-md-3">
+						<div class="col-lg-3 col-md-6">
 							<div class="footer-menu">
 								<h3 class="footer-menu-title">
 									@@title
@@ -27,7 +27,7 @@
 						</div>
 					</widget>
 					<widget type="menu" name="footer:menu-2" section="پاورقی">
-						<div class="col-md-3">
+						<div class="col-lg-3 col-md-6">
 							<div class="footer-menu">
 								<h3 class="footer-menu-title">
 									@@title
@@ -51,7 +51,7 @@
 						</div>
 					</widget>
 					<widget type="subscription" name="footer:subscription" section="پاورقی">
-						<div class="col-md-6">
+						<div class="col-lg-6 col-md-12">
 							<div class="footer-subscription">
 								<form name="footersubscription" class="footer-subscription-form" ng-submit="footersubscription.$valid && submit()" eval="collect('@@label')" subscription dynamic-form auto-show novalidate>
 									<h3 class="footer-subscription-title">
@@ -90,7 +90,7 @@
 											</span>
 										</div>
 									</div>
-									<button class="btn btn-lg btn-orange rounded footer-subscription-submit" ng-disabled="progress">
+									<button class="btn btn-lg btn-orange footer-subscription-submit" ng-disabled="progress">
 										ثبت‌نام
 									</button>
 									<if terms="@@user.admin">

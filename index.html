@@ -17,8 +17,8 @@
 											@@title
 										</a>
 									</h2>
-									<p class="slider-item-description">
-										@@description
+									<p class="slider-item-description d-none d-md-block">
+										@@description.truncate("100")
 									</p>
 									<if terms="@@user.admin">
 										<div class="pt-15">
@@ -53,18 +53,18 @@
 				</h2>
 				<div class="row">
 					<loop src="@@items">
-						<div class="col-md-4">
+						<div class="col-lg-4 col-md-6">
 							<div class="pictures-item position-relative mb-30">
 								<div class="pictures-item-overlay">
-									<span class="fa fa-camera-retro pictures-item-icon mb-30"></span>
+									<span class="fa fa-camera-retro pictures-item-icon d-none d-md-block mb-30"></span>
 									<h3 class="pictures-item-title mb-15">
 										@@title
 									</h3>
-									<p class="pictures-item-description mb-20">
-										@@description
+									<p class="pictures-item-description d-none d-md-block mb-20">
+										@@description.truncate("30")
 									</p>
 									<a href="@@url" class="btn btn-orange rounded-0 pictures-item-link">
-										@@anchor
+										جزئیات بیشتر
 										<i class="fa fa-angle-left"></i>
 									</a>
 								</div>
@@ -93,7 +93,7 @@
 				</h2>
 				<div class="row">
 					<loop src="@@items">
-						<div class="col-md-3">
+						<div class="col-lg-3 col-md-6">
 							<div class="features-item text-center mb-30">
 								<img src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=100&width=100&q=high' alt="@@title" class="features-item-image">
 								<if terms="@@user.admin">
@@ -132,7 +132,7 @@
 		<widget type="gallery" name="home:logos" section="صفحه‌ی نخست">
 			<div class="logos-container p-50">
 				<div class="owl-container position-relative">
-					<div class="logos-items owl-carousel" options="{ autoplay: true, autoplayTimeout: 3500, margin: 30, autoplayHoverPause: true, smartSpeed: 500, loop:true, rtl: true, responsive:{ 0:{ items: 4 } } }">
+					<div class="logos-items owl-carousel" options="{ autoplay: true, autoplayTimeout: 3500, margin: 30, autoplayHoverPause: true, smartSpeed: 500, loop:true, rtl: true, responsive:{ 0:{ items: 1 }, 576:{ items: 2 }, 992:{ items: 4 } } }">
 						<loop src="@@items">
 							<div class="logos-item d-flex justify-content-center align-items-center bg-white rounded">
 								<a href="@@url" class="logos-item-link">
@@ -162,7 +162,7 @@
 				</h2>
 				<div class="row">
 					<loop src="@@items">
-						<div class="col-md-3">
+						<div class="col-lg-3 col-md-6">
 							<div class="products-item text-center mb-30">
 								<a href="@@url" class="products-item-link">
 									<img src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=250&width=250&q=high' alt="@@title" class="products-item-image">
@@ -193,7 +193,7 @@
 
 		<!--contact-->
 		<widget type="content" name="home:contact" section="صفحه‌ی نخست">
-			<div class="contcat-container p-50">
+			<div class="contcat-container p-10 p-sm-50">
 				<h2 class="contact-title mb-30">
 					@@title
 					<if terms="@@user.admin">
@@ -229,7 +229,7 @@
 				</h2>
 				<div class="row">
 					<loop src="@@items">
-						<div class="col-12 col-md-6 col-lg-4">
+						<div class="col-md-6 col-lg-6 col-xl-4">
 							<div class="posts-item position-relative mb-30">
 								<a href="@@url">
 									<img class="posts-item-image" src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=250&width=250&q=high' alt="@@title">
