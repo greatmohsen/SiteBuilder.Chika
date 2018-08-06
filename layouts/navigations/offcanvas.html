@@ -31,64 +31,60 @@
                                 </if>
                             </li>
                         </loop>
+						<if terms="@@user.exists()">
+							<li class="nav-item dropdown">
+								<a href="/user" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+									@@user
+								</a>
+								<div class="dropdown-menu">
+									<if terms="@@user.reseller">
+										<a href="/reseller" class="dropdown-item">
+											<i class="fa ml-2 mt-1 fa-globe"></i>
+											بخش نمایندگی
+										</a>
+									</if>
+									<if terms="@@user.admin">
+										<a href="/admin" class="dropdown-item">
+											<i class="fa ml-2 mt-1 fa-gear"></i>
+											بخش مدیریت
+										</a>
+									</if>
+									<a href="/user" class="dropdown-item">
+										<i class="fa ml-2 mt-1 fa-user"></i>
+										بخش کاربری
+									</a>
+									<a href="/user/profile" class="dropdown-item">
+										<i class="fa ml-2 mt-1 fa-pencil"></i>
+										ویرایش مشخصات
+									</a>
+									<a href="/user/profile/changepassword" class="dropdown-item">
+										<i class="fa ml-2 mt-1 fa-lock"></i>
+										تغییر رمز عبور
+									</a>
+									<a href="/site/signout" class="dropdown-item">
+										<i class="fa ml-2 mt-1 fa-power-off"></i>
+										خروج
+									</a>
+								</div>
+							</li>
+						</if>
+						<if terms="@@user.empty()">
+							<li class="nav-item">
+								<a href="@@users.signin" class="nav-link">
+									ورود
+								</a>
+							</li>
+							<if terms="@@users.signup.enabled">
+								<li class="nav-item">
+									<a href="@@users.signup" class="nav-link">
+										ثبت‌نام
+									</a>
+								</li>
+							</if>
+						</if>
                     </ul>
                 </div>
             </div>
-            <if terms="@@user.exists()">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a href="/user" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            @@user
-                        </a>
-                        <div class="dropdown-menu">
-                            <if terms="@@user.reseller">
-                                <a href="/reseller" class="dropdown-item">
-                                    <i class="fa ml-2 mt-1 fa-globe"></i>
-                                    بخش نمایندگی
-                                </a>
-                            </if>
-                            <if terms="@@user.admin">
-                                <a href="/admin" class="dropdown-item">
-                                    <i class="fa ml-2 mt-1 fa-gear"></i>
-                                    بخش مدیریت
-                                </a>
-                            </if>
-                            <a href="/user" class="dropdown-item">
-                                <i class="fa ml-2 mt-1 fa-user"></i>
-                                بخش کاربری
-                            </a>
-                            <a href="/user/profile" class="dropdown-item">
-                                <i class="fa ml-2 mt-1 fa-pencil"></i>
-                                ویرایش مشخصات
-                            </a>
-                            <a href="/user/profile/changepassword" class="dropdown-item">
-                                <i class="fa ml-2 mt-1 fa-lock"></i>
-                                تغییر رمز عبور
-                            </a>
-                            <a href="/site/signout" class="dropdown-item">
-                                <i class="fa ml-2 mt-1 fa-power-off"></i>
-                                خروج
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </if>
-            <if terms="@@user.empty()">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="@@users.signin" class="nav-link">
-                            ورود
-                        </a>
-                    </li>
-                    <if terms="@@users.signup.enabled">
-                        <li class="nav-item">
-                            <a href="@@users.signup" class="nav-link">
-                                ثبت‌نام
-                            </a>
-                        </li>
-                    </if>
-                </ul>
-            </if>
         </div>
     </nav>
 </widget>

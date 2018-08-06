@@ -2047,6 +2047,10 @@ hr { border-width: 2px; border-color: rgba(255, 255, 255, 0.1); }
 .copyright-container { padding: 15px 0; line-height: 40px; }
 .copyright-text {  }
 
+@media(max-width: 575px) {
+	.footer-subscription { padding: 30px 10px; }
+}
+
 
 /* _-_-_-_-_ Chika Styles _-_-_-_-_ */
 /*** Header ***/
@@ -2102,7 +2106,7 @@ hr { border-width: 2px; border-color: rgba(255, 255, 255, 0.1); }
 /* pictures */
 .pictures-container {  }
 .pictures-item {  }
-.pictures-item-overlay { position: absolute; top: 30px; right: 30px; bottom: 30px; left: 30px; z-index: 2; background: rgba(47, 47, 47, 0.8); display: flex; flex-flow: column nowrap; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all .3s ease-in-out; }
+.pictures-item-overlay { position: absolute; top: 30px; right: 30px; bottom: 30px; left: 30px; z-index: 2; padding: 20px; background: rgba(47, 47, 47, 0.8); display: flex; flex-flow: column nowrap; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all .3s ease-in-out; }
 .pictures-item:hover .pictures-item-overlay { opacity: 1; visibility: visible; }
 .pictures-item-icon { font-size: 40px; }
 .pictures-item-title {  }
@@ -2150,3 +2154,9 @@ hr { border-width: 2px; border-color: rgba(255, 255, 255, 0.1); }
 .posts-item-more { display: block; position: absolute; left: 0; bottom: 0; height: 60px; width: 60px; text-align: center; color: #54575b; background: #13161b; }
 .posts-item-more:hover { background: #f79745; color: #fff; }
 .posts-item-more .fa { line-height: 60px; font-size: 24px; }
+@media(min-width: 768px) and (max-width: 1199.98px) {
+	.posts-item { padding: 0 20px 50px; }
+}
+@media(max-width: 575px) {
+	.posts-item { padding: 0 20px 50px; }
+}

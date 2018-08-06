@@ -22,17 +22,17 @@
 		<div class="container">
 			<div class="row">
 				<if terms="@@ismobiledevice">
-					<div class="col-12">
+					<div class="col-4">
 						<include name="layouts/navigations/offcanvas.html" />
 					</div>
 				</if>
 				<if terms="@@ismobiledevice.false()">
-					<div class="col-lg-9">
+					<div class="col-4 col-md-6 col-lg-12 col-xl-9">
 						<include name="layouts/navigations/navbar.html" />
 					</div>
 				</if>
 				<widget type="content" name="social">
-					<div class="col-12 col-lg-3">
+					<div class="col-8 col-md-6 col-lg-12 col-xl-3">
 						<div class="social-links pt-20 text-left">
 							<if terms="@@telegram.exists()">
 								<a class="social-links-item telegram" href="@@telegram"><span class="fa fa-send"></span></a>

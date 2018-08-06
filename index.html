@@ -155,40 +155,42 @@
 		<!--/logos-->
 
 		<!--products-->
-		<widget type="products" name="home:products" section="صفحه‌ی نخست">
-			<div class="products-container my-50">
-				<h2 class="section-title">
-					@@title
-				</h2>
-				<div class="row">
-					<loop src="@@items">
-						<div class="col-lg-3 col-md-6">
-							<div class="products-item text-center mb-30">
-								<a href="@@url" class="products-item-link">
-									<img src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=250&width=250&q=high' alt="@@title" class="products-item-image">
-								</a>
-								<h3 class="products-item-title px-15 mt-20">
+		<if terms="@@config.features.store">
+			<widget type="products" name="home:products" section="صفحه‌ی نخست">
+				<div class="products-container my-50">
+					<h2 class="section-title">
+						@@title
+					</h2>
+					<div class="row">
+						<loop src="@@items">
+							<div class="col-lg-3 col-md-6">
+								<div class="products-item text-center mb-30">
 									<a href="@@url" class="products-item-link">
-										@@title
+										<img src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=250&width=250&q=high' alt="@@title" class="products-item-image">
 									</a>
-								</h3>
-								<span class="products-item-price d-block px-15 pb-20">
-									@@price تومان
-								</span>
+									<h3 class="products-item-title px-15 mt-20">
+										<a href="@@url" class="products-item-link">
+											@@title
+										</a>
+									</h3>
+									<span class="products-item-price d-block px-15 pb-20">
+										@@price تومان
+									</span>
+								</div>
 							</div>
-						</div>
-					</loop>
-				</div>
-				<if terms="@@user.admin">
-					<div class="pt-15">
-						<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
-							<i class="fa fa-pencil"></i>
-							ویرایش
-						</a>
+						</loop>
 					</div>
-				</if>
-			</div>
-		</widget>
+					<if terms="@@user.admin">
+						<div class="pt-15">
+							<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
+								<i class="fa fa-pencil"></i>
+								ویرایش
+							</a>
+						</div>
+					</if>
+				</div>
+			</widget>
+		</if>
 		<!--/products-->
 
 		<!--contact-->
@@ -229,7 +231,7 @@
 				</h2>
 				<div class="row">
 					<loop src="@@items">
-						<div class="col-md-6 col-lg-6 col-xl-4">
+						<div class="col-md-6 col-lg-4 col-xl-4">
 							<div class="posts-item position-relative mb-30">
 								<a href="@@url">
 									<img class="posts-item-image" src='@@image.default("/site/resources/images/empty.jpg")?m=crop&h=250&width=250&q=high' alt="@@title">
