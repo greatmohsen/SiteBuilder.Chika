@@ -104,6 +104,10 @@ hr { border-width: 2px; border-color: rgba(255, 255, 255, 0.1); }
 	.navbar-nav .nav-link, .navbar-nav .nav-subset-link { line-height: 200%; display: block; margin-bottom: 5px; padding: 5px 15px !important; }
 }
 
+@media(min-width: 1200px) and (max-width: 1399.98px) {
+	.navbar-nav .nav-link { font-size: 15px; padding: 0 5px 15px !important; }
+}
+
 .offcanvas {  }
 .offcanvas-sidebar { position: fixed; right: -100%; top: 0; z-index: 1000; width: 350px; background: #1e222a; overflow: auto; height: 100%; direction: ltr; box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.1); transition: 0.5s; }
 .offcanvas-header { direction: rtl; padding: 20px 15px; line-height: 30px; position: relative; background: rgba(0, 0, 0, 0.1); }

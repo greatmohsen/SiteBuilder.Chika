@@ -27,12 +27,12 @@
 					</div>
 				</if>
 				<if terms="@@ismobiledevice.false()">
-					<div class="col-4 col-md-6 col-lg-12 col-xl-9">
+					<div class="col-4 col-md-6 col-lg-12 col-xl-8">
 						<include name="layouts/navigations/navbar.html" />
 					</div>
 				</if>
 				<widget type="content" name="social">
-					<div class="col-8 col-md-6 col-lg-12 col-xl-3">
+					<div class="col-8 col-md-6 col-lg-12 col-xl-4">
 						<div class="social-links py-10 py-lg-0 pt-xl-20 text-left">
 							<if terms="@@telegram.exists()">
 								<a class="social-links-item telegram" href="@@telegram"><span class="fa fa-send"></span></a>
@@ -56,6 +56,11 @@
 								<a href="@@editurl" class="btn btn-sm btn-edit edit-link edit-link-widget">
 									<i class="fa fa-pencil"></i>
 									ویرایش
+								</a>
+							</if>
+							<if terms="@@config.features.store">
+								<a class="btn btn-primary btn-sm basket-link mr-10" href="/site/cart/" cart>
+									<i class="fa fa-shopping-basket ml-1"></i> سبد خرید <span class="badges" ng-bind="model.items.length || 0">0</span>
 								</a>
 							</if>
 						</div>
